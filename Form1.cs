@@ -17,27 +17,28 @@ namespace fpi_trab
             InitializeComponent();
         }
 
-        private void picture_loader()
+        private Image picture_loader(string picture_name)
         {
+            Image image = Image.FromFile(picture_name);
             var picture = new PictureBox
             {
                 Name = "pictureBox",
                 Size = new Size(16, 16),
                 Location = new Point(100, 100),
-                Image = Image.FromFile("hello.jpg"),
+                Image = image,
 
             };
             this.Controls.Add(picture);
+            return image;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Image image = Image.FromFile("spurdo.jpg");
+            Image image = picture_loader("spurdo.jpg");
             // Set the PictureBox image property to this image.
-            // ... Then, adjust its height and width properties.
-            pictureBox1.Image = image;
-            pictureBox1.Height = image.Height;
-            pictureBox1.Width = image.Width;
+            this.Controls.   pictureBox.Image = image;
+            pictureBox.Height = image.Height;
+            pictureBox.Width = image.Width;
 
             this.Height = image.Height + 100;
             this.Width = image.Width + 100;
