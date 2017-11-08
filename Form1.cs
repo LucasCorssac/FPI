@@ -16,5 +16,15 @@ namespace fpi_trab
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Image image = Image.FromFile("spurdo.jpg");
+            // Set the PictureBox image property to this image.
+            // ... Then, adjust its height and width properties.
+            pictureBox1.Image = image;
+            pictureBox1.Height = image.Height;
+            pictureBox1.Width = image.Width;
+        }
     }
 }
