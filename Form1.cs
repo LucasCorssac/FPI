@@ -17,6 +17,19 @@ namespace fpi_trab
             InitializeComponent();
         }
 
+        private void picture_loader()
+        {
+            var picture = new PictureBox
+            {
+                Name = "pictureBox",
+                Size = new Size(16, 16),
+                Location = new Point(100, 100),
+                Image = Image.FromFile("hello.jpg"),
+
+            };
+            this.Controls.Add(picture);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Image image = Image.FromFile("spurdo.jpg");
@@ -25,6 +38,13 @@ namespace fpi_trab
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
+
+            this.Height = image.Height + 100;
+            this.Width = image.Width + 100;
+
+            image.Save("johnny.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+
+
         }
     }
 }
